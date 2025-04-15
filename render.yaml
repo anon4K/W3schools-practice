@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: W3schools-practice
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: >
+      python manage.py migrate &&
+      python manage.py collectstatic --noinput &&
+      gunicorn productive.wsgi
+    autoDeploy: true
+    healthCheckPath: /health/
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: Productive.settings
+      - key: SECRET_KEY
+        value: ${DJANGO_SECRET_KEY}
+      - key: DEBUG
+        value: "False"

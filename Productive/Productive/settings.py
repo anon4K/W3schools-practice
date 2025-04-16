@@ -39,7 +39,7 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
-ROOT_URLCONF = 'Productive.urls'
+ROOT_URLCONF = 'Productive.Productive.urls'
 
 TEMPLATES = [
     {

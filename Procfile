@@ -1,1 +1,1 @@
-web: gunicorn Productive.wsgi
+web: gunicorn Productive.wsgi:application
